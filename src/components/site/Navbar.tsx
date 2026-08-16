@@ -35,23 +35,23 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex h-20 max-w-[88rem] items-center justify-between px-5 md:h-24 md:px-10">
-        <Link to="/" className="group flex flex-col leading-none">
-          <span className="font-display text-xl tracking-[0.18em] text-foreground md:text-2xl">
+        <Link to="/" className="group flex shrink-0 flex-col leading-none">
+          <span className="whitespace-nowrap font-display text-lg tracking-[0.16em] text-foreground md:text-2xl">
             ZAM ZAM MANDI
           </span>
-          <span className="mt-1 text-[0.6rem] tracking-[0.32em] text-primary">
+          <span className="mt-1 whitespace-nowrap text-[0.55rem] tracking-[0.26em] text-primary md:text-[0.6rem]">
             NADD AL HAMAR • DUBAI
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-8 lg:flex">
+        <ul className="hidden items-center gap-5 lg:flex xl:gap-8">
           {navLinks.map((l) => (
             <li key={l.to}>
               <Link
                 to={l.to}
                 activeProps={{ className: "text-primary" }}
                 activeOptions={{ exact: l.to === "/" }}
-                className="relative text-[0.78rem] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary"
+                className="relative whitespace-nowrap text-[0.7rem] uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-primary xl:text-[0.75rem] xl:tracking-[0.2em]"
               >
                 {lang === "ar" ? l.ar : l.label}
               </Link>
@@ -59,24 +59,24 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3">
           <button
             type="button"
             onClick={() => setLang(lang === "en" ? "ar" : "en")}
-            className="hidden text-[0.7rem] tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary md:block"
+            className="hidden whitespace-nowrap text-[0.7rem] tracking-[0.16em] text-muted-foreground transition-colors hover:text-primary md:block"
             aria-label="Switch language"
           >
             {lang === "en" ? "EN | العربية" : "العربية | EN"}
           </button>
           <Link
             to="/menu"
-            className="hidden border border-border px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.22em] text-secondary transition-colors hover:border-primary hover:text-primary xl:inline-block"
+            className="hidden whitespace-nowrap border border-border px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.2em] text-secondary transition-colors hover:border-primary hover:text-primary 2xl:inline-block"
           >
             {t("viewMenu")}
           </Link>
           <Link
             to="/reservation"
-            className="hidden bg-primary px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.22em] text-primary-foreground transition-opacity hover:opacity-90 md:inline-block"
+            className="hidden whitespace-nowrap bg-primary px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90 md:inline-block"
           >
             {t("reserve")}
           </Link>
