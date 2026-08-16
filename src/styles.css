@@ -4,6 +4,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-display: "Cormorant Garamond", "Amiri", serif;
+  --font-sans: "Jost", system-ui, sans-serif;
+  --font-arabic: "Amiri", "Cormorant Garamond", serif;
+}
+
 /*
  * Design system definition.
  *
