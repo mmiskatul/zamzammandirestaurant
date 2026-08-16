@@ -86,12 +86,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Authentic Yemeni Mandi, Haneeth and Madbee in Nadd Al Hamar, Dubai. Open daily 11 AM – 12 AM.",
+          "Authentic Yemeni Mandi, Haneeth and Madbee served with warm Arabian hospitality in Nadd Al Hamar, Dubai. Open daily 11:00 AM – 12:00 AM. Call +971 4 892 9060.",
       },
       { name: "author", content: "Zam Zam Mandi Restaurant" },
       { property: "og:site_name", content: "Zam Zam Mandi Restaurant" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Zam Zam Mandi Restaurant — Yemeni Mandi in Nadd Al Hamar, Dubai" },
+      { name: "twitter:title", content: "Zam Zam Mandi Restaurant — Yemeni Mandi in Nadd Al Hamar, Dubai" },
+      { property: "og:description", content: "Authentic Yemeni Mandi, Haneeth and Madbee served with warm Arabian hospitality in Nadd Al Hamar, Dubai. Open daily 11:00 AM – 12:00 AM. Call +971 4 892 9060." },
+      { name: "twitter:description", content: "Authentic Yemeni Mandi, Haneeth and Madbee served with warm Arabian hospitality in Nadd Al Hamar, Dubai. Open daily 11:00 AM – 12:00 AM. Call +971 4 892 9060." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b47a77948d629320a094daea78358663/id-preview-be86662d--38722ca2-0caf-4595-a4b8-e25125b465bd.lovable.app-1786858332363.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b47a77948d629320a094daea78358663/id-preview-be86662d--38722ca2-0caf-4595-a4b8-e25125b465bd.lovable.app-1786858332363.png" },
     ],
     links: [
       {
