@@ -12,7 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ExperienceRouteImport } from './routes/experience'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as MenuRouteImport } from './routes/menu'
+import { Route as OrderRouteImport } from './routes/order'
+import { Route as PrivateDiningRouteImport } from './routes/private-dining'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -29,9 +33,29 @@ const ExperienceRoute = ExperienceRouteImport.update({
   path: '/experience',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MenuRoute = MenuRouteImport.update({
   id: '/menu',
   path: '/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrderRoute = OrderRouteImport.update({
+  id: '/order',
+  path: '/order',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivateDiningRoute = PrivateDiningRouteImport.update({
+  id: '/private-dining',
+  path: '/private-dining',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -39,34 +63,75 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/experience': typeof ExperienceRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
   '/menu': typeof MenuRoute
+  '/order': typeof OrderRoute
+  '/private-dining': typeof PrivateDiningRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/experience': typeof ExperienceRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
   '/menu': typeof MenuRoute
+  '/order': typeof OrderRoute
+  '/private-dining': typeof PrivateDiningRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/experience': typeof ExperienceRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
   '/menu': typeof MenuRoute
+  '/order': typeof OrderRoute
+  '/private-dining': typeof PrivateDiningRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/experience' | '/menu'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/experience'
+    | '/faq'
+    | '/gallery'
+    | '/menu'
+    | '/order'
+    | '/private-dining'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/experience' | '/menu'
-  id: '__root__' | '/' | '/about' | '/experience' | '/menu'
+  to:
+    | '/'
+    | '/about'
+    | '/experience'
+    | '/faq'
+    | '/gallery'
+    | '/menu'
+    | '/order'
+    | '/private-dining'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/experience'
+    | '/faq'
+    | '/gallery'
+    | '/menu'
+    | '/order'
+    | '/private-dining'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ExperienceRoute: typeof ExperienceRoute
+  FaqRoute: typeof FaqRoute
+  GalleryRoute: typeof GalleryRoute
   MenuRoute: typeof MenuRoute
+  OrderRoute: typeof OrderRoute
+  PrivateDiningRoute: typeof PrivateDiningRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -92,11 +157,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperienceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/menu': {
       id: '/menu'
       path: '/menu'
       fullPath: '/menu'
       preLoaderRoute: typeof MenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/order': {
+      id: '/order'
+      path: '/order'
+      fullPath: '/order'
+      preLoaderRoute: typeof OrderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/private-dining': {
+      id: '/private-dining'
+      path: '/private-dining'
+      fullPath: '/private-dining'
+      preLoaderRoute: typeof PrivateDiningRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -106,7 +199,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ExperienceRoute: ExperienceRoute,
+  FaqRoute: FaqRoute,
+  GalleryRoute: GalleryRoute,
   MenuRoute: MenuRoute,
+  OrderRoute: OrderRoute,
+  PrivateDiningRoute: PrivateDiningRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
